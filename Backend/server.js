@@ -17,18 +17,13 @@ console.log("=== ENV DEBUG END ===");
 
 
 const express = require('express');
-const cors = require('cors');
+
 const app = require("./src/app");
 const connectToDB = require("./src/config/database");
 
 
 // CORS Setup
-app.use(cors({
-   origin: true,
-   credentials: true,
-   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-   allowedHeaders: ["Content-Type", "Authorization"]
-}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
