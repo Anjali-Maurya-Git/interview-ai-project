@@ -24,10 +24,10 @@ const connectToDB = require("./src/config/database");
 
 // CORS Setup
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+   origin: true,
+   credentials: true,
+   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
@@ -42,8 +42,9 @@ app.get("/", (req, res) => {
 // Connect Database
 connectToDB();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`✅ Server started successfully on http://localhost:${PORT}`);
+    console.log(`✅ Server started successfully on port ${PORT}`);
     console.log("✅ Ready for frontend connection");
 });

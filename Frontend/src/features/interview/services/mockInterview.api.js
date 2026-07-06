@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const API =
-"http://localhost:3000/mock-interview"
+"https://interview-ai-project-v4ri.onrender.com"
 
 
 
